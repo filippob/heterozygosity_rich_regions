@@ -1,11 +1,14 @@
 #!/bin/bash
 
-## script to extract SMARTER data for HRR analysis
+## script to filter SNP genotype data for HRR analysis
 ## (detection of common HRR across commercial and rural goat populations)
 
-DATA=/home/smarter/hrr_goat_data/goats
-PLINK=$HOME/software/plink/plink
-OUTDIR=$HOME/hrr/Analysis
+# DATA=/home/smarter/hrr_goat_data/goats
+DATA=$HOME/Documents/SMARTER/Analysis/goats
+# PLINK=$HOME/software/plink/plink
+PLINK=$HOME/Downloads/plink
+# OUTDIR=$HOME/hrr/Analysis
+OUTDIR=$HOME/Documents/SMARTER/Analysis/filter
 
 if [ ! -d "$OUTDIR" ]; then
 	mkdir $OUTDIR

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-## script to extract SMARTER data for HRR analysis
+## script to calculate basic descriptive statistics for HRR analysis
 ## (detection of common HRR across commercial and rural goat populations)
 
 DATA=~/Documents/SMARTER/Analysis/goats
