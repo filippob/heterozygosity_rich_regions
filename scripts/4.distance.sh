@@ -17,7 +17,7 @@ fi
 ## (option --cow to allow for 60 chromosomes in goats)
 ## there is no option --goat 
 ## (sheep has 54 chromosomes, therefore --sheep would not work)
-$PLINK --cow --file $DATA/goat_filtered --distance square 1-ibs --out $OUTDIR/goat_filtered
+$PLINK --cow --bfile $DATA/goat_filtered --distance square 1-ibs --out $OUTDIR/goat_filtered
 
 echo "DONE!"
 
