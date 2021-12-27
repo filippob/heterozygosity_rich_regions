@@ -7,5 +7,5 @@
 - identify common HRR (across selected commercial populations and marginal naive populations)
 - likely regions that are conserved irrespective of selection pressure  --> regions conserved in *C. hircus* and that may have a biological function
 - fix the parameters for the identification of HRR (may be tweaked) and explore the effect of imputing missing SNP genotypes
-- sex chromosomes?
+- sex chromosomes? (currently, sex info only on 40% of samples --> exclude sex chromosomes for the moment()
 - filtering data prior to detectRUNS? MAF (no problems here with monomorphic sites, we are looking for HRR!), missing-rate (standard criteria should suffice)
