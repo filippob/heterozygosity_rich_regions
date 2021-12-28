@@ -19,8 +19,8 @@ if (length(args) >= 1) {
   #as follows
   config = NULL
   config = rbind(config, data.frame(
-    base_folder = '~/Documents/SMARTER/Analysis/hrr/',
-    genotypes = "Analysis/hrr/goat_thin.ped",
+    #base_folder = '~/Documents/SMARTER/Analysis/hrr/',
+    #genotypes = "Analysis/hrr/goat_thin.ped",
     mapfile = "Analysis/hrr/goat_thin.map",
     minSNP = 15,
     ROHet = TRUE,
@@ -35,6 +35,11 @@ if (length(args) >= 1) {
 writeLines(' - current values of parameters')
 print(paste("genotype file:", config$genotypes))
 print(paste("mapfile:", config$mapfile))
+print(paste("min n. of SNP:", config$minSNP))
+print(paste("maximum gap between SNPs:", config$maxGap))
+print(paste("min length of hrr (bps):", config$minLengthBps))
+print(paste("max homozygous SNP on hrr:", config$maxOppRun))
+print(paste("max missing SNP in hrr:", config$maxMissRun))
 
 # genotypeFilePath <- system.file(
 #   "extdata", "Kijas2016_Sheep_subset.ped", package="detectRUNS")
@@ -54,3 +59,9 @@ consecutiveRuns <- consecutiveRUNS.run(
   maxOppRun = config$maxOppRun,
   maxMissRun = config$maxMissRun
 )
+
+fname = paste(config$base_folder,"hrr_goats.csv", sep="")
+writeLines(" - writing out results (HRRs) to file")
+print(paste("output file name:",fname))
+fwrite(consecutiveRuns, file = fname, sep = ",")
+	      
