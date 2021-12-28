@@ -5,7 +5,7 @@ library("detectRUNS")
 library("data.table")
 
 args = commandArgs(trailingOnly=TRUE)
-if (length(args) == 1) {
+if (length(args) >= 1) {
   
   #loading the parameters
   source(args[1])
@@ -31,6 +31,10 @@ if (length(args) == 1) {
     force_overwrite = FALSE
   ))
 }
+
+writeLines(' - current values of parameters')
+print(paste("genotype file:", config$genotypes))
+print(paste("mapfile:", config$mapfile))
 
 # genotypeFilePath <- system.file(
 #   "extdata", "Kijas2016_Sheep_subset.ped", package="detectRUNS")
