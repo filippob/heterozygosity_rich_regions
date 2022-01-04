@@ -38,9 +38,9 @@ Rscript --vanilla $RSCRIPT $OUTDIR/config.R
 $PLINK --cow --bfile $DATA/goat_filtered --update-ids $DATA/update.ids --make-bed --out $OUTDIR/goat_filtered
 
 ## house cleaning
-echo "4. Cleaning"
-#rm $OUTDIR/goat_thin*
-#rm $OUTDIR/config.R
+echo "3. Cleaning"
+rm $OUTDIR/goat_filtered.log
+rm $OUTDIR/goat_filtered.nosex
 
 echo "DONE!"
 
