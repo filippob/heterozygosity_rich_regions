@@ -19,3 +19,6 @@
 2. 2.descriptove_stats.sh [OPTIONAL]
 3. 3.filter_snps.sh: script to filter SNP data based on MAF and call-rate
 4. script 3.1.update_pop.sh [OPTIONAL]: script to update population information in the Plink files
+5. 4.distance.sh [OPTIONAL]: script to calculate IBS genetic distances between samples
+6. 5.detect_hrr.sh: script to detect HRRs (detectRUNS inside)
+7. parse_results.R: script to parse results and produce output tables and plots
