@@ -33,13 +33,13 @@ else
 fi
 
 ## convert back to Plink files
-$PLINK  --vcf $OUTDIR/goat_imputed.vcf.gz --make-bed --out $OUTDIR/goat_imputed
+$PLINK --cow --vcf $OUTDIR/goat_imputed.vcf.gz --make-bed --out $OUTDIR/goat_imputed
 
 ## house cleaning
 echo "4. Cleaning"
 rm $OUTDIR/goat_filtered*
-rm $OUTDIR/goat_imputed.ped
-rm $OUTDIR/goat_imputed.map
+rm $OUTDIR/goat_imputed.log
+rm $OUTDIR/goat_imputed.nosex
 
 echo "DONE!"
 
