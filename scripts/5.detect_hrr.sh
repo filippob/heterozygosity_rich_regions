@@ -53,6 +53,7 @@ Rscript --vanilla $RSCRIPT $OUTDIR/config.R
 ## house cleaning
 echo "4. Cleaning"
 rm $OUTDIR/goat_thin.log
+rm $OUTDIR/goat_thin.nosex
 rm $OUTDIR/config.R
 
 echo "DONE!"
