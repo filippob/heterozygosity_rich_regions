@@ -28,7 +28,7 @@ echo "1. Thinning"
 ## (option --cow to allow for 60 chromosomes in goats)
 ## there is no option --goat 
 ## (sheep has 54 chromosomes, therefore --sheep would not work)
-$PLINK --cow --bfile $DATA/goat_filtered --thin 0.15 --recode --out $OUTDIR/goat_thin
+$PLINK --cow --bfile $DATA/goat_filtered --thin 0.99 --recode --out $OUTDIR/goat_thin
 
 
 ## Configuration file
@@ -52,7 +52,7 @@ Rscript --vanilla $RSCRIPT $OUTDIR/config.R
 
 ## house cleaning
 echo "4. Cleaning"
-rm $OUTDIR/goat_thin*
+rm $OUTDIR/goat_thin.log
 rm $OUTDIR/config.R
 
 echo "DONE!"
