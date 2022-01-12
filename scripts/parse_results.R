@@ -27,7 +27,7 @@ if (length(args) >= 1) {
     pedfile = "/home/filippo/Documents/SMARTER/Analysis/hrr/goat_thin.ped",
     mapfile = "/home/filippo/Documents/SMARTER/Analysis/hrr/goat_thin.map",
     outdir = "Analysis/results/",
-    prefix = "breed", ## analysis identifier,
+    prefix = "imputed", ## analysis identifier,
     thr_value = 0.20, ##threshold for HRR islands
     force_overwrite = FALSE
   ))
