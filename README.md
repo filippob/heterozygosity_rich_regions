@@ -16,7 +16,7 @@
 
 ## workflow
 1. 1.extract_data.sh: script to extract relevant data from the SMARTER goat database
-2. 2.descriptove_stats.sh [OPTIONAL]
+2. 2.descriptive_stats.sh [OPTIONAL]
 3. 3.filter_snps.sh: script to filter SNP data based on MAF and call-rate
 4. script 3.1.update_pop.sh [OPTIONAL]: script to update population information in the Plink files
 5. script 3.2.imputation.sh: script to impute (if needed/wanted) missing SNP genotypes (Beagle inside)
