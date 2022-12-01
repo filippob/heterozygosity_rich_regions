@@ -28,11 +28,13 @@ if (length(args) >= 1) {
     minLengthBps = 250000,
     maxOppRun = 3,
     maxMissRun = 2,
+    species = '',
     force_overwrite = FALSE
   ))
 }
 
 writeLines(' - current values of parameters')
+print(paste("species is:", config$species))
 print(paste("genotype file:", config$genotypes))
 print(paste("mapfile:", config$mapfile))
 print(paste("min n. of SNP:", config$minSNP))
@@ -60,8 +62,11 @@ consecutiveRuns <- consecutiveRUNS.run(
   maxMissRun = config$maxMissRun
 )
 
-fname = paste(config$base_folder,"hrr_goats.csv", sep="")
+tmp = paste(config$minSNP, config$minLengthBps, config$maxOppRun, config$maxMissRun, sep="_")
+fname = paste("hrr_", tmp, ".csv", sep="")
+fpath = file.path(config$base_folder, config$species, fname)
+
 writeLines(" - writing out results (HRRs) to file")
-print(paste("output file name:",fname))
-fwrite(consecutiveRuns, file = fname, sep = ",")
+print(paste("output file name:",fpath))
+fwrite(consecutiveRuns, file = fpath, sep = ",")
 	      

@@ -4,12 +4,12 @@
 ## the bash scripts first thins and transform the input data
 ## then calls an R script to detect HRR (detectRUNS inside)
 
-prjfolder=/home/smarter/hrr_parameters
+prjfolder=$HOME/Documents/SMARTER/hrr_parameters
 species="cow"
 DATA=$prjfolder/Analysis/filter
-PLINK=$HOME/software/plink/plink
-OUTDIR=$prjfolder/Analysis/hrr
-RSCRIPT=$HOME/hrr_parameters/heterozygosity_rich_regions/scripts/detect_hrr.R
+PLINK=$HOME/Downloads/plink
+OUTDIR=$prjfolder/Analysis/hrr/$species
+RSCRIPT=$prjfolder/heterozygosity_rich_regions/scripts/detect_hrr.R
 minSNP=15
 maxGap=10^6
 minBps=250*10^3
@@ -43,6 +43,7 @@ echo "maxGap = $maxGap," >> $OUTDIR/config.R
 echo "minLengthBps = $minBps," >> $OUTDIR/config.R
 echo "maxOppRun = $maxOpp," >> $OUTDIR/config.R
 echo "maxMissRun = $maxMiss," >> $OUTDIR/config.R
+echo "species = '$species'," >> $OUTDIR/config.R
 echo "force_overwrite = FALSE)" >> $OUTDIR/config.R
 
 ## detect RUNS
@@ -54,6 +55,7 @@ echo "4. Cleaning"
 rm $OUTDIR/${species}_thin.log
 rm $OUTDIR/${species}_thin.nosex
 #rm $OUTDIR/config.R
+
 
 echo "DONE!"
 
