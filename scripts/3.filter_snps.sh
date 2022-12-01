@@ -4,14 +4,15 @@
 ## (detection of common HRR across commercial and rural goat populations)
 
 # DATA=/home/smarter/hrr_goat_data/goats
-DATA=$HOME/Documents/SMARTER/Analysis/goats
+DATA=/home/smarter/hrr_parameters/data/select_sheep_lacaune_SMARTEROAR-top-0.4.7dev_only50
 # PLINK=$HOME/software/plink/plink
-PLINK=$HOME/Downloads/plink
+PLINK=$HOME/software/plink/plink
 # OUTDIR=$HOME/hrr/Analysis
-OUTDIR=$HOME/Documents/SMARTER/Analysis/filter
+OUTDIR=/home/smarter/hrr_parameters/Analysis/filter
+SPECIES="sheep"
 MAF=0.05
 GENO=0.05
-MIND=0.20
+MIND=0.10
 
 if [ ! -d "$OUTDIR" ]; then
 	mkdir $OUTDIR
@@ -21,7 +22,7 @@ fi
 ## (option --cow to allow for 60 chromosomes in goats)
 ## there is no option --goat 
 ## (sheep has 54 chromosomes, therefore --sheep would not work)
-$PLINK --cow --allow-extra-chr --bfile $DATA --chr 1-29 --bp-space 1 --geno $GENO --mind $MIND --maf $MAF --make-bed --out $OUTDIR/goat_filtered
+$PLINK --sheep --allow-extra-chr --bfile $DATA --chr 1-26 --bp-space 1 --geno $GENO --mind $MIND --maf $MAF --make-bed --out $OUTDIR/${SPECIES}_filtered
 
 echo "DONE!"
 
